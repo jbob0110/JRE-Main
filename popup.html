@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <script src="popup.js"></script>
+   <link rel="stylesheet" href="/styles/styles.css">
+   <meta charset="utf-8">   
+</head>
+
+<body>
+   <div class="grid-container">
+      <div class="title">JSE</div>
+      <div class="rightNav">
+          <div class="tab">
+            <input id="scYes" class="submit" type="submit" name="scyes" value="AppFrame SC Yes">
+            <input id="scYesSea" class="submit" type="submit" name="scyes" value="Seahorse SC Yes">
+            <input id="releaseNote" class="submit" type="submit" name="releasenote" value="Release Note">
+            <input id="options" class="submit" type="submit" name="options" value="Options">
+          </div>
+      </div>
+      <div class="content">
+         <div id="listSDs">
+            <form id="select">
+               <p class="select">Select SD: </p>
+               <select id="SDs">
+                  <option value="">None</option>
+               </select>
+            </form>
+         </div>
+         <div id="listTAs">
+            <form id="select">
+               <p class="select">Select TA: </p>
+               <select id="TAs">
+                  <option value="">None</option>
+               </select>
+            </form>
+         </div>
+         <div id="listSEs">
+            <form id="select">
+               <p class="select">Select SE: </p>
+               <select id="SEs">
+                  <option value="">None</option>
+               </select>
+            </form>
+         </div>
+         <div class="loader" id="loader"></div>
+      </div>
+   </div>
+</body>
+
+</html>

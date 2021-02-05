@@ -1,0 +1,31 @@
+{  
+   "name":"Jira Extension",
+   "version":"0.1.0",
+   "description":"Creates Jira Sub-Tasks with selected assignees",
+
+   "permissions":[
+      "<all_urls>",
+      "activeTab",
+      "tabs",
+      "storage"
+   ],
+   "options_ui": {
+      "page": "options.html",
+      "open_in_tab": true,
+      "browser_style": true
+   },
+   "applications":{
+      "gecko":{
+         "id": "jirasubsm@nuxy.addons.mozilla.org"
+      }
+   },
+   "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+         "16":"icons/icon16-dark.png",
+         "48":"icons/icon48-dark.png",
+         "128":"icons/icon128-dark.png"
+      }
+   },
+   "manifest_version":2
+}
