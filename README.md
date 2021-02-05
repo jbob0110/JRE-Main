@@ -7,8 +7,6 @@ Sub-tasks are assigned to the appropriate SD (Requirement Sub-task), TA (Test Ca
 
 Options Button takes you to the options page where you can edit the SD, TA, and SE that show in the pop-up dropdown lists.
 
-SC-N Button ONLY adds labels. No sub-tasks are created
-
 Release Notes Button adds a single sub-task for the SD selected (Release Notes Sub-task)
 
 SC-Y AND Release Notes Button will still create JIRAs if and SD, TA, or SE is NOT selected.
