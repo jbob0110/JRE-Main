@@ -1,6 +1,6 @@
 {  
    "name":"Jira Extension",
-   "version":"0.1.0",
+   "version":"0.2.0",
    "description":"Creates Jira Sub-Tasks with selected assignees",
 
    "permissions":[
@@ -27,5 +27,5 @@
          "128":"icons/icon128-dark.png"
       }
    },
-   "manifest_version":2
+   "manifest_version":3
 }
