@@ -1,10 +1,9 @@
 .grid-container {
    display: grid;
-   display: -ms-grid;
-   grid-template-columns: 200px 1fr;
+   width: 366.02px;
    grid-template-rows: auto;
    background-color: whitesmoke;
-   padding: 10px;
+   padding: 5px;
    border-radius: 10px;
    border: 1px solid green;
    justify-items: stretch;
@@ -14,9 +13,7 @@
    grid-column: 3 / span 1;
    grid-row: 2 / span 3;
    padding: 10px;
-   font-size: 16px;
    width: auto;
-   align-content: center;
 }
  
 .title {
@@ -34,8 +31,7 @@
 .content {
    grid-column: 1 / span 2;
    grid-row: 2 / span 3;
-   padding: 2px;
-   font-size: 18px;
+   padding: 1px;
    width: auto;
 }
 
@@ -45,7 +41,7 @@
 
 .tab {
    background-color: whitesmoke;
-   max-height: 80%;
+   max-height: 100%;
    padding: 10px;
 }
    
@@ -54,13 +50,12 @@
    display: block;
    background-color: green;
    color: white;
-   padding: 10px 10px;
+   padding: 6px 6px;
    width: 100%;
    outline: 1px solid green;
    text-align: center;
    cursor: pointer;
    transition: 0.1s;
-   font-size: 13px;
    align-items: center;
 }
    
@@ -117,7 +112,6 @@ ul li {
    background-color: #f6f6f6;
    padding: 12px;
    text-decoration: none;
-   font-size: 18px;
    color: black;
    display: block;
    position: relative;
