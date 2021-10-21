@@ -13,39 +13,48 @@ chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
 chrome.storage.sync.get(['SDarray'], function (result) {
   var x = document.getElementById("SDs");
   var option;
-  for (var i = 0; i< result.SDarray.length; i++){
-    option = document.createElement("option");
-    var split = result.SDarray[i].split("<spa");
-    split = split[0].split(" :");
-    option.text = split[0];
-    option.value = split[1];
-    x.add(option);
+  if(result.SDarray){
+    for (var i = 0; i< result.SDarray.length; i++){
+      option = document.createElement("option");
+      var split = result.SDarray[i].split("<spa");
+      split = split[0].split(" :");
+      option.text = split[0];
+      option.value = split[1];
+      x.add(option);
+    }
   }
-});
+}
+);
 chrome.storage.sync.get(['TAarray'], function(result) {
   var x = document.getElementById("TAs");
   var option, split;
-  for(var i = 0; i< result.TAarray.length; i++){
-    option = document.createElement("option");
-    split = result.TAarray[i].split("<spa");
-    split = split[0].split(" :");
-    option.text = split[0];
-    option.value = split[1];
-    x.add(option);
+  if(result.TAarray){
+    for(var i = 0; i< result.TAarray.length; i++){
+      option = document.createElement("option");
+      split = result.TAarray[i].split("<spa");
+      split = split[0].split(" :");
+      option.text = split[0];
+      option.value = split[1];
+      x.add(option);
+    }
   }
-});
+}
+);
 chrome.storage.sync.get(['SEarray'], function(result) {
   var x = document.getElementById("SEs");
   var option, split;
-  for(var i = 0; i< result.SEarray.length; i++){
-    option = document.createElement("option");
-    split = result.SEarray[i].split("<spa");
-    split = split[0].split(" :");
-    option.text = split[0];
-    option.value = split[1];
-    x.add(option);
+  if(result.SDarray){
+    for(var i = 0; i< result.SEarray.length; i++){
+      option = document.createElement("option");
+      split = result.SEarray[i].split("<spa");
+      split = split[0].split(" :");
+      option.text = split[0];
+      option.value = split[1];
+      x.add(option);
     }
-});
+  }  
+}
+);
 
 window.onload = () => {
   document.getElementById('scYes').onclick = () => {
