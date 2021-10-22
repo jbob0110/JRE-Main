@@ -40,22 +40,6 @@ chrome.storage.sync.get(['TAarray'], function(result) {
   }
 }
 );
-chrome.storage.sync.get(['SEarray'], function(result) {
-  var x = document.getElementById("SEs");
-  var option, split;
-  if(result.SDarray){
-    for(var i = 0; i< result.SEarray.length; i++){
-      option = document.createElement("option");
-      split = result.SEarray[i].split("<spa");
-      split = split[0].split(" :");
-      option.text = split[0];
-      option.value = split[1];
-      x.add(option);
-    }
-  }  
-}
-);
-
 window.onload = () => {
   document.getElementById('scYes').onclick = () => {
     var Sd = document.getElementById('SDs').value;
@@ -68,57 +52,11 @@ window.onload = () => {
   /**The requirements XMLHttpRequest is opened and sent*/        
   addSubTask({"fields":{  "project":{  "key": project },"parent":{ "key": jiraKey},"summary":"Requirements","description":" ","assignee":{  "name": Sd},"issuetype":{  "name":"Sub-task"}} });
   console.log("Requirements Sent");
-  /**The test case/scenario review XMLHttpRequest is opened and sent*/
-  addSubTask({"fields":{  "project":{  "key": project},"parent":{  "key": jiraKey},"summary":"Test Case/Scenario Review","description":"*As a* Test Analyst\n*I want to* identify component tests that can be Automated AND create a scenario review for any new scenarios \n *So that* Engineers or TAs know what scenarios to automate \n*Ill known im done when* tests have been identified and scenario review (if necessary) is logged with a link provided in this subtask \nh4. Tasks for existing scripts before adding new scenarios\n||Task||Status||\n| Address if Scenarios to an existing script can be moved to an SBET | (x) |\n| Optimization (only after the first two have been completed) | (x) |\nDetailed Steps: \n 1. Meet with the Engineers and SDs to review the requirements \n 2. Separate out what requirements should go in the automated script or to an SBET. \n 3. Create the scenarios for the black box test and send them for review.\n 4. Document where the requirements will be tested. Black Box or SBET.\n","assignee":{  "name": Ta},"issuetype":{  "name":"Sub-task"}} });
-  console.log("Test Case Sent");
   /**The automation XMLHttpRequest is opened and sent*/        
   addSubTask({"fields":{  "project":{  "key": project },"parent":{ "key": jiraKey},"summary":"Automation","description":" ","assignee":{  "name": Se},"issuetype":{  "name":"Sub-task"}} });
   console.log("Automation Sent");
-  /**The Grey Box XMLHttpRequest is opened and sent*/        
-  addSubTask({"fields":{  "project":{  "key": project },"parent":{ "key": jiraKey},"summary":"Grey Box","description":" ","assignee":{  "name": Se},"issuetype":{  "name":"Sub-task"}} });
-  console.log("Grey Box Sent");
-  /**The Tech Verify XMLHttpRequest is opened and sent*/        
-  addSubTask({"fields":{  "project":{  "key": project },"parent":{ "key": jiraKey},"summary":"Tech Verify","description":" ","assignee":{  "name": Se}, "issuetype":{  "name":"Sub-task"}} });
-  console.log("Tech Verify Sent");
   };
   
-  document.getElementById('scYesContr').onclick = () => {
-    var Sd = document.getElementById('SDs').value;
-    var Ta = document.getElementById('TAs').value;
-    var Se = document.getElementById('SEs').value;
-    console.log("SD: "+Sd);
-    console.log("TA: "+Ta);
-    console.log("SE: "+Se);
-    document.getElementById('loader').style.display = "block";
-  /**The requirements XMLHttpRequest is opened and sent*/        
-  addSubTask({"fields":{  "project":{  "key": project },"parent":{ "key": jiraKey},"summary":"Requirements","description":" ","assignee":{  "name": Sd},"issuetype":{  "name":"Sub-task"}} });
-  console.log("Requirements Sent");
-  /**The test case/scenario review XMLHttpRequest is opened and sent*/
-  addSubTask({"fields":{  "project":{  "key": project},"parent":{  "key": jiraKey},"summary":"Test Case/Scenario Review","description":"*As a* Test Analyst\n*I want to* identify component tests that can be Automated AND create a scenario review for any new scenarios \n *So that* Engineers or TAs know what scenarios to automate \n*Ill known im done when* tests have been identified and scenario review (if necessary) is logged with a link provided in this subtask \nh4. Tasks for existing scripts before adding new scenarios\n||Task||Status||\n| Address if Scenarios to an existing script can be moved to an SBET | (x) |\n| Optimization (only after the first two have been completed) | (x) |\nDetailed Steps: \n 1. Meet with the Engineers and SDs to review the requirements \n 2. Separate out what requirements should go in the automated script or to an SBET. \n 3. Create the scenarios for the black box test and send them for review.\n 4. Document where the requirements will be tested. Black Box or SBET.\n","assignee":{  "name": Ta},"issuetype":{  "name":"Sub-task"}} });
-  console.log("Test Case Sent");
-  /**The automation XMLHttpRequest is opened and sent*/        
-  addSubTask({"fields":{  "project":{  "key": project },"parent":{ "key": jiraKey},"summary":"Automation","description":" ","assignee":{  "name": Se},"issuetype":{  "name":"Sub-task"}} });
-  console.log("Automation Sent");
-  /**The Grey Box XMLHttpRequest is opened and sent*/        
-  addSubTask({"fields":{  "project":{  "key": project },"parent":{ "key": jiraKey},"summary":"Grey Box","description":" ","assignee":{  "name": Se},"issuetype":{  "name":"Sub-task"}} });
-  console.log("Grey Box Sent");
-  /**The Tech Verify XMLHttpRequest is opened and sent*/        
-  };
-
-  document.getElementById('scYesSea').onclick = () => {
-    var Sd = document.getElementById('SDs').value;
-    var Ta = document.getElementById('TAs').value;
-    console.log("SD: "+Sd);
-    console.log("TA: "+Ta);
-    document.getElementById('loader').style.display = "block";
-  /**The requirements XMLHttpRequest is opened and sent*/        
-  addSubTask({"fields":{  "project":{  "key": project },"parent":{ "key": jiraKey},"summary":"Requirements","description":" ","assignee":{  "name": Sd},"issuetype":{  "name":"Sub-task"}} });
-  console.log("Requirements Sent");
-  /**The test case/scenario review XMLHttpRequest is opened and sent*/
-  addSubTask({"fields":{  "project":{  "key": project},"parent":{  "key": jiraKey},"summary":"Test Case/Scenario Review","description":"*As a* Test Analyst\n*I want to* identify component tests that can be Automated AND create a scenario review for any new scenarios \n *So that* Engineers or TAs know what scenarios to automate \n*Ill known im done when* tests have been identified and scenario review (if necessary) is logged with a link provided in this subtask \nh4. Tasks for existing scripts before adding new scenarios\n||Task||Status||\n| Address if Scenarios to an existing script can be moved to an SBET | (x) |\n| Optimization (only after the first two have been completed) | (x) |\nDetailed Steps: \n 1. Meet with the Engineers and SDs to review the requirements \n 2. Separate out what requirements should go in the automated script or to an SBET. \n 3. Create the scenarios for the black box test and send them for review.\n 4. Document where the requirements will be tested. Black Box or SBET.\n","assignee":{  "name": Ta},"issuetype":{  "name":"Sub-task"}} });
-  console.log("Test Case Sent");   
-  };
-
   document.getElementById('releaseNote').onclick = () => {
     var Sd = document.getElementById('SDs').value;
     console.log("SD: "+Sd);
